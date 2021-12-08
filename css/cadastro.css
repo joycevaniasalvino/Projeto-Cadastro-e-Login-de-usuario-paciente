@@ -1,0 +1,64 @@
+
+body{
+    background-color: #f1eded;
+}
+.container{
+    background-color: #ffffff;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+    width: 40%;
+    padding: 3% 3% 3% 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.form-control{ /*estiliza todos os inputs do formulário*/
+    border-color: #000000;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.form-control:focus{ /*style da ação "selecionado" de todos os inputs*/
+    box-shadow: 0 0 0 2px #000000bb; 
+    border-color: #000000;
+}
+
+.btn-primary{ /*style do botão enviar*/
+    background-color: #000000;
+    border-color: #000000;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 2% 5%;
+    font-size: 80%;
+    margin-top: 5%;
+    border-style: outset; /*style levemente elevado do botão enviar */
+}
+.btn-primary:hover{ /*style da ação "passar o mouse por cima" no botão enviar*/
+    background-color: #141212;
+    border-color: #000000;
+}
+.btn-primary:focus{ /*style da ação "selecionado" do botão enviar*/
+    box-shadow: 0 0 0 2px #000000bb!important; 
+    background-color: #141212!important;
+    border-color: #000000!important;
+}  
+.button{
+    text-align: center;
+}
+p{
+    margin-top: 3%;
+}
+.svg2, .svg{
+    color: #000000;
+}
+.svg2:hover{
+    color: #000000;
+}
+.voltar{
+    padding-top: 1%;
+}
+.copy{
+    color: #f1eded;
+}
