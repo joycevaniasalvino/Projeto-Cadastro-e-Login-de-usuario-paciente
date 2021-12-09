@@ -31,7 +31,7 @@ body{
     border-color: #000000;
     border-width: 2px;
     border-radius: 10px;
-    padding: 2% 5%;
+    padding: 2% 5% 10% 5%;
     font-size: 80%;
     margin-top: 5%;
     border-style: outset; /*style levemente elevado do botão enviar */
@@ -60,4 +60,13 @@ p{
 }
 .copy{
     color: #f1eded;
+}
+body::-webkit-scrollbar {
+    width: 9px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #000;  /* creates padding around scroll thumb */
 }

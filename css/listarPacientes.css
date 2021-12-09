@@ -8,3 +8,41 @@
 p{
     color: #ffffff;
 }
+
+.container{
+    background-color: #ffffff;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+    width: 70%;
+    padding: 3% 3% 3% 6%;
+    margin-top: 5%;
+    margin-bottom: 25%;
+}
+table{
+    border-radius: 20px;
+}
+body::-webkit-scrollbar {
+    width: 9px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #000;  /* creates padding around scroll thumb */
+}
+
+@media (max-width:768px) {
+    .container{
+        background-color: #ffffff;
+        border-radius: 20px;
+        border-width: 2px;
+        border-color: #000000;
+        border-style: solid;
+        width: 70%;
+        padding: 3% 3% 3% 6%;
+        margin-top: 5%;
+        margin-bottom: 35%;
+    }
+}

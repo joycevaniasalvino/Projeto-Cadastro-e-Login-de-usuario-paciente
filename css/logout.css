@@ -23,4 +23,13 @@ body{
     box-shadow: 0 0 0 2px #000000bb!important; 
     background-color: #141212!important;
     border-color: #000000!important;
-}  
+}
+body::-webkit-scrollbar {
+    width: 9px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #000;  /* creates padding around scroll thumb */
+}

@@ -64,7 +64,7 @@
                         <a class="nav-link" href="./pacienteCadastro.php">Cadastrar Paciente<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./logout.php">Sair</a>
+                        <a class="nav-link" href="./logout.html">Sair</a>
                     </li>
                 </ul>
             </div>

@@ -13,25 +13,13 @@
     <title>Obrigado!</title>
 </head>
 <body>
-    <?php
-
-        session_start();
-
-        if(isset($_SESSION)){
-            session_destroy();
-
-        }
-
-        header("Location: login.php");
-
-    ?>
     <main>
         <div class="card">
             <div class="card text-center">
                 <div class="card-body">
                     <h5 class="card-title">Obrigado por utilizar nosso site!</h5>
                     <p class="card-text">Se deseja voltar para o site, clique no botão abaixo para logar novamente.</p>
-                    <a href="./login.php" class="btn btn-primary">Voltar</a>
+                    <a href="./logoutConf.php" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
         </div>

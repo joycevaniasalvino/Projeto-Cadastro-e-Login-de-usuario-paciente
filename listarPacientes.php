@@ -20,7 +20,8 @@
        $nome = $_SESSION['nome'];
 
        $row = [
-           ["nome"=>"Jose Santos Silva", "idade"=>19, "peso"=>74.5, "altura"=>1.75],
+           ["id"=>1, "nome"=>"Jose Santos Silva", "idade"=>19, "peso"=>74.5, "altura"=>1.75],
+           ["id"=>2, "nome"=>"Maria Santos Silva", "idade"=>23, "peso"=>75.7, "altura"=>1.68],
        ];
 
        mysqli_close($mysqli);
@@ -40,7 +41,7 @@
                         <a class="nav-link" href="./pacienteCadastro.php">Cadastrar Paciente<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./logout.php">Sair</a>
+                        <a class="nav-link" href="./logout.html">Sair</a>
                     </li>
                 </ul>
                 <p>Olá, <?=$nome?>!</p>
@@ -48,24 +49,32 @@
         </nav>
     </header>
     <main>
-    <table border="1">
-        <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Peso</th>
-            <th>Altura</th>
-            <th>IMC</th>
-        </tr>
-        <?php foreach($row as $pacientes){?>
-            <tr>
-                <td><?= $pacientes["nome"]?></td>
-                <td><?= $pacientes["idade"]?></td>
-                <td><?= $pacientes["peso"]?></td>
-                <td><?= $pacientes["altura"]?></td>
-                <td><?= $pacientes["peso"] * $pacientes["altura"]?></td>
-            </tr>
-        <?php } ?>
-    </table>
+        <div class="table-responsive-sm container">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Idade</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Altura</th>
+                        <th scope="col">IMC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($row as $pacientes){?>
+                        <tr>
+                            <th scope="row"><?= $pacientes["id"]?></th>
+                            <td><?= $pacientes["nome"]?></td>
+                            <td><?= $pacientes["idade"]?></td>
+                            <td><?= $pacientes["peso"]?></td>
+                            <td><?= $pacientes["altura"]?></td>
+                            <td><?= number_format( $pacientes["peso"] / ($pacientes["altura"] * $pacientes["altura"]),2)?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
