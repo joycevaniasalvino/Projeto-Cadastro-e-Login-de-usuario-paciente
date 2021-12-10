@@ -17,30 +17,30 @@
        include('protect.php');
        include('conexao.php');
 
-       $nome = $_SESSION['nome'];
+       //$nome = $_SESSION['nome'];
 
-       $row = [
-           ["id"=>1, "nome"=>"Jose Santos Silva", "idade"=>19, "peso"=>74.5, "altura"=>1.75],
-           ["id"=>2, "nome"=>"Maria Santos Silva", "idade"=>23, "peso"=>75.7, "altura"=>1.68],
-       ];
+    //    $row = [
+    //        ["id"=>1, "nome"=>"Jose Santos Silva", "idade"=>19, "peso"=>74.5, "altura"=>1.75],
+    //        ["id"=>2, "nome"=>"Maria Santos Silva", "idade"=>23, "peso"=>75.7, "altura"=>1.68],
+    //    ];
 
        $dados = [];
 
-       if(!($result = mysqli_query($mysqli, "SELECT * FROM pacientes"))){
-           echo "Erro ao listar pacientes" . mysqli_error($mysqli);
-       }
+    //    if(!($result = mysqli_query($mysqli, "SELECT * FROM pacientes"))){
+    //        echo "Erro ao listar pacientes" . mysqli_error($mysqli);
+    //    }
 
-       while($linhaPlinha = mysqli_fetch_row($result)){
-           $dados[] = [
-               "id" => (int)$linhaPlinha[0],
-               "nome" => $linhaPlinha[1],
-               "idade" => (int)$linhaPlinha[2],
-               "peso" => (float)$linhaPlinha[3],
-               "altura" => (float)$linhaPlinha[4],
-           ];
-       }
-       mysqli_free_result($result);
-       mysqli_close($mysqli);
+    //    while($linhaPlinha = mysqli_fetch_row($result)){
+    //        $dados[] = [
+    //            "id" => (int)$linhaPlinha[0],
+    //            "nome" => $linhaPlinha[1],
+    //            "idade" => (int)$linhaPlinha[2],
+    //            "peso" => (float)$linhaPlinha[3],
+    //            "altura" => (float)$linhaPlinha[4],
+    //        ];
+    //    }
+    //    mysqli_free_result($result);
+    //    mysqli_close($mysqli);
 
     ?>
     <header>
@@ -60,12 +60,31 @@
                         <a class="nav-link" href="./logout.html">Sair</a>
                     </li>
                 </ul>
-                <p>Olá, <?=$nome?>!</p>
+                <p>Olá, <?=$_SESSION['nome']?>!</p>
             </div>
         </nav>
     </header>
     <main>
         <div class="table-responsive-sm container">
+            <?php
+
+                if(!($result = mysqli_query($mysqli, "SELECT * FROM pacientes"))){?>
+                    <p style="color: red;"><?php echo "Erro ao listar pacientes: " . mysqli_error($mysqli)?>;</p>
+                <?php }
+                while($linhaPlinha = mysqli_fetch_row($result)){
+                    $dados[] = [
+                        "id" => (int)$linhaPlinha[0],
+                        "nome" => $linhaPlinha[1],
+                        "idade" => (int)$linhaPlinha[2],
+                        "peso" => (float)$linhaPlinha[3],
+                        "altura" => (float)$linhaPlinha[4],
+                    ];
+                }
+                
+                mysqli_free_result($result);
+                mysqli_close($mysqli);
+            
+            ?>
             <table class="table table-striped table-borderless">
                 <thead>
                     <tr>

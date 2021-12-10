@@ -14,22 +14,30 @@
 </head>
 <body>
     <?php
+
         include('protect.php');
         include('conexao.php');
 
+
         if(isset($_POST['inputNomeP']) || isset($_POST['inputIdade']) || isset($_POST['inputPeso']) || isset($_POST['inputAltura'])){
             if(strlen($_POST['inputNomeP']) == 0){
-                echo "Preencha o campo Nome";
+                //echo "Preencha o campo Nome";
+                $_SESSION['error'] = "Preencha o campo Nome";
             }else if(strlen($_POST['inputIdade']) == 0){
-                echo "Preencha o campo Idade";
+                //echo "Preencha o campo Idade";
+                $_SESSION['error'] = "Preencha o campo Idade";
             }else if(strlen($_POST['inputPeso']) == 0){
-                echo "Preencha o campo Peso";
+                //echo "Preencha o campo Peso";
+                $_SESSION['error'] = "Preencha o campo Peso";
             }else if(filter_var($_POST['inputPeso'], FILTER_VALIDATE_INT)){
-                echo "Preencha o campo Peso no formato 00.0";
+                //echo "Preencha o campo Peso no formato 00.0";
+                $_SESSION['error'] = "Preencha o campo Peso no formato 00.0";
             }else if(strlen($_POST['inputAltura']) == 0){
-                echo "Preencha o campo Altura";
+                // "Preencha o campo Altura";
+                $_SESSION['error'] = "Preencha o campo Altura";
             }else if(filter_var($_POST['inputAltura'], FILTER_VALIDATE_INT)){
-                echo "Preencha o campo Peso no formato 0.00";
+                //echo "Preencha o campo Peso no formato 0.00";
+                $_SESSION['error'] = "Preencha o campo Peso no formato 0.00";
             }else{
 
                 $nomeP = $_POST['inputNomeP'];
@@ -72,8 +80,25 @@
     </header>
     <main>
         <div class="container">
+            <div class="svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="75" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+            </div>
             <div class="formulario">
                 <form action="" method="POST">
+                <?php 
+                if(isset($_SESSION['error'])){
+                    setcookie('erro', $_SESSION['error'], time()+10);
+                    if(isset($_COOKIE['erro'])){?>
+                            <p style= "margin: 0; color: red;"><?= $_COOKIE['erro'];?></p><?php
+                        }else{
+                            echo "";
+                        }
+                }else{ 
+                    echo "";
+                    }?>
                     <div class="form-group">
                         <label for="inputNomeP">Nome:</label>
                         <input type="text" class="form-control" name="inputNomeP" aria-describedby="emailHelp" placeholder="Insira nome do paciente">

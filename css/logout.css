@@ -7,19 +7,21 @@ body{
     margin: 7% auto;
 }
 
-.btn-primary{ /*style do botão enviar*/
+.btn-primary{ /*style do botão sair*/
     background-color: #000000;
     border-color: #000000;
-    border-width: 2px;
+    border-width: 5px;
+    color: #ffffff;
     border-radius: 10px;
-    font-size: 80%;
-    border-style: outset; /*style levemente elevado do botão enviar */
+    font-size: 90%;
+    border-style: outset; /*style levemente elevado do botão sair */
 }
-.btn-primary:hover{ /*style da ação "passar o mouse por cima" no botão enviar*/
+
+.btn-primary:hover{ /*style da ação "passar o mouse por cima" no botão sair*/
     background-color: #141212;
     border-color: #000000;
 }
-.btn-primary:focus{ /*style da ação "selecionado" do botão enviar*/
+.btn-primary:focus{ /*style da ação "selecionado" do botão sair*/
     box-shadow: 0 0 0 2px #000000bb!important; 
     background-color: #141212!important;
     border-color: #000000!important;

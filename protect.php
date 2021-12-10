@@ -4,6 +4,7 @@
     }
 
     if(!isset($_SESSION['id'])){
-        die("Você não pode acessar esta página porque não está logado. <p><a href=\"login.php\">Entrar</p>");
+        $_SESSION['error'] = "Você não pode acessar esta página sem realizar login ou cadastro.";
+        header("Location: login.php");
     }
 ?>
