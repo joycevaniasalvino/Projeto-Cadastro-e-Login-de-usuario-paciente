@@ -24,6 +24,22 @@
            ["id"=>2, "nome"=>"Maria Santos Silva", "idade"=>23, "peso"=>75.7, "altura"=>1.68],
        ];
 
+       $dados = [];
+
+       if(!($result = mysqli_query($mysqli, "SELECT * FROM pacientes"))){
+           echo "Erro ao listar pacientes" . mysqli_error($mysqli);
+       }
+
+       while($linhaPlinha = mysqli_fetch_row($result)){
+           $dados[] = [
+               "id" => (int)$linhaPlinha[0],
+               "nome" => $linhaPlinha[1],
+               "idade" => (int)$linhaPlinha[2],
+               "peso" => (float)$linhaPlinha[3],
+               "altura" => (float)$linhaPlinha[4],
+           ];
+       }
+       mysqli_free_result($result);
        mysqli_close($mysqli);
 
     ?>
@@ -50,7 +66,7 @@
     </header>
     <main>
         <div class="table-responsive-sm container">
-            <table class="table table-borderless">
+            <table class="table table-striped table-borderless">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -62,7 +78,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($row as $pacientes){?>
+                    <?php foreach($dados as $pacientes){?>
                         <tr>
                             <th scope="row"><?= $pacientes["id"]?></th>
                             <td><?= $pacientes["nome"]?></td>

@@ -16,13 +16,11 @@ p{
     border-color: #000000;
     border-style: solid;
     width: 70%;
-    padding: 3% 3% 3% 6%;
+    padding: 3%;
     margin-top: 5%;
     margin-bottom: 25%;
 }
-table{
-    border-radius: 20px;
-}
+
 body::-webkit-scrollbar {
     width: 9px;               /* width of the entire scrollbar */
 }
