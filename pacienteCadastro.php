@@ -50,6 +50,7 @@
         
                 if(mysqli_query($mysqli, $sql)){
                     echo "Paciente cadastrado com sucesso";
+                    
                     header("Location: listarPacientes.php");
                 }else{
                     echo "Erro".mysqli_connect_error($mysqli);
@@ -61,7 +62,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <!-- Navbar content -->
-            <a class="navbar-brand" href="./listarPacientes.php">Lista de Pacientes</a>
+            <a style="color: rgb(158, 156, 156); font-size:16px" class="navbar-brand cor" href="./listarPacientes.php">Lista de Pacientes</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,10 +70,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./pacienteCadastro.php">Cadastrar Paciente<span class="sr-only"></span></a>
+                        <a style="font-size: 17px; margin-right: 4px; margin-left:-4px;" class="nav-link" href="./pacienteCadastro.php">Cadastrar Paciente<span class="sr-only"></span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./logout.html">Sair</a>
+                    <li style="margin-top: 2px;" class="nav-item active">
+                        <a style="font-size: 15px; color:rgb(158, 156, 156);" class="nav-link" href="./logout.html">Sair</a>
                     </li>
                 </ul>
             </div>
@@ -89,13 +90,9 @@
             <div class="formulario">
                 <form action="" method="POST">
                 <?php 
-                if(isset($_SESSION['error'])){
-                    setcookie('erro', $_SESSION['error'], time()+10);
-                    if(isset($_COOKIE['erro'])){?>
-                            <p style= "margin: 0; color: red;"><?= $_COOKIE['erro'];?></p><?php
-                        }else{
-                            echo "";
-                        }
+                if(isset($_SESSION['error'])){?>
+                    <p style= "margin: 0; color: red;"><?= $_SESSION['error'];?></p><?php
+                    unset($_SESSION['error']);
                 }else{ 
                     echo "";
                     }?>

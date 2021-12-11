@@ -18,6 +18,13 @@ body{
     margin-top: 4%;
     margin-bottom: 4%;
 }
+.mr-auto > .active > a:hover{
+    color: #d6d5d5 !important;
+}
+
+.navbar > a:hover{
+    color: #d6d5d5 !important;
+}
 
 .form-control{ /*estiliza todos os inputs do formulário*/
     border-color: #000000;
@@ -35,9 +42,10 @@ body{
     border-color: #000000;
     border-width: 2px;
     border-radius: 10px;
-    padding: 2% 5%;
-    font-size: 80%;
+    padding: 2% 10%;
+    font-size: 90%;
     margin-top: 5%;
+    margin-bottom: 5px;
     border-style: outset; /*style levemente elevado do botão enviar */
 }
 .btn-primary:hover{ /*style da ação "passar o mouse por cima" no botão enviar*/

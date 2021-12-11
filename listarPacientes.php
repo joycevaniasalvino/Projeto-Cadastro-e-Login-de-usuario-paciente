@@ -42,11 +42,11 @@
     //    mysqli_free_result($result);
     //    mysqli_close($mysqli);
 
-    ?>
+    // ?>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
             <!-- Navbar content -->
-            <a class="navbar-brand listar" href="./listarPacientes.php">Lista de Pacientes</a>
+            <a style="font-size: 18px; margin-right: 7px;" class="navbar-brand" href="./listarPacientes.php">Lista de Pacientes</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,37 +54,37 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./pacienteCadastro.php">Cadastrar Paciente<span class="sr-only"></span></a>
+                        <a style="color: rgb(158, 156, 156); font-size:16px;" class="nav-link" href="./pacienteCadastro.php">Cadastrar Paciente<span class="sr-only"></span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./logout.html">Sair</a>
+                    <li style="margin-top: 1px;" class="nav-item active">
+                        <a style="font-size: 15px; color:rgb(158, 156, 156);" class="nav-link" href="./logout.html">Sair</a>
                     </li>
                 </ul>
-                <p>Olá, <?=$_SESSION['nome']?>!</p>
+                <p style="margin-bottom: -2px;" >Olá, <?=$_SESSION['nome']?>!</p>
             </div>
         </nav>
     </header>
     <main>
         <div class="table-responsive-sm container">
-            <?php
+        <?php
 
-                if(!($result = mysqli_query($mysqli, "SELECT * FROM pacientes"))){?>
-                    <p style="color: red;"><?php echo "Erro ao listar pacientes: " . mysqli_error($mysqli)?>;</p>
-                <?php }
-                while($linhaPlinha = mysqli_fetch_row($result)){
-                    $dados[] = [
-                        "id" => (int)$linhaPlinha[0],
-                        "nome" => $linhaPlinha[1],
-                        "idade" => (int)$linhaPlinha[2],
-                        "peso" => (float)$linhaPlinha[3],
-                        "altura" => (float)$linhaPlinha[4],
-                    ];
-                }
-                
-                mysqli_free_result($result);
-                mysqli_close($mysqli);
-            
-            ?>
+            if(!($result = mysqli_query($mysqli, "SELECT * FROM pacientes"))){?>
+                <p style="color: red;"><?php echo "Erro ao listar pacientes: " . mysqli_error($mysqli)?>;</p>
+            <?php }
+            while($linhaPlinha = mysqli_fetch_row($result)){
+                $dados[] = [
+                    "id" => (int)$linhaPlinha[0],
+                    "nome" => $linhaPlinha[1],
+                    "idade" => (int)$linhaPlinha[2],
+                    "peso" => (float)$linhaPlinha[3],
+                    "altura" => (float)$linhaPlinha[4],
+                ];
+            }
+
+            mysqli_free_result($result);
+            mysqli_close($mysqli);
+
+        ?>
             <table class="table table-striped table-borderless">
                 <thead>
                     <tr>

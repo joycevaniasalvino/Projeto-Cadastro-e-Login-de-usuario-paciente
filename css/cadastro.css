@@ -30,8 +30,8 @@ body{
     border-color: #000000;
     border-width: 2px;
     border-radius: 10px;
-    padding: 2% 5%;
-    font-size: 80%;
+    padding: 2% 10%;
+    font-size: 90%;
     margin-top: 5%;
     border-style: outset; /*style levemente elevado do botão enviar */
 }
@@ -50,10 +50,10 @@ body{
 p{
     margin-top: 3%;
 }
-.svg{
+.svg2, .svg{
     color: #000000;
 }
-.svg:hover{
+.svg2:hover{
     color: #000000;
 }
 .voltar{
@@ -61,13 +61,4 @@ p{
 }
 .copy{
     color: #f1eded;
-}
-body::-webkit-scrollbar {
-    width: 9px;               /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: #000000;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 1px solid #000;  /* creates padding around scroll thumb */
 }
