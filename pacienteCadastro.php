@@ -22,22 +22,22 @@
         if(isset($_POST['inputNomeP']) || isset($_POST['inputIdade']) || isset($_POST['inputPeso']) || isset($_POST['inputAltura'])){
             if(strlen($_POST['inputNomeP']) == 0){
                 //echo "Preencha o campo Nome";
-                $_SESSION['error'] = "Preencha o campo Nome";
+                $_SESSION['errorCP'] = "Preencha o campo Nome";
             }else if(strlen($_POST['inputIdade']) == 0){
                 //echo "Preencha o campo Idade";
-                $_SESSION['error'] = "Preencha o campo Idade";
+                $_SESSION['errorCP'] = "Preencha o campo Idade";
             }else if(strlen($_POST['inputPeso']) == 0){
                 //echo "Preencha o campo Peso";
-                $_SESSION['error'] = "Preencha o campo Peso";
+                $_SESSION['errorCP'] = "Preencha o campo Peso";
             }else if(filter_var($_POST['inputPeso'], FILTER_VALIDATE_INT)){
                 //echo "Preencha o campo Peso no formato 00.0";
-                $_SESSION['error'] = "Preencha o campo Peso no formato 00.0";
+                $_SESSION['errorCP'] = "Preencha o campo Peso no formato 00.0";
             }else if(strlen($_POST['inputAltura']) == 0){
                 // "Preencha o campo Altura";
-                $_SESSION['error'] = "Preencha o campo Altura";
+                $_SESSION['errorCP'] = "Preencha o campo Altura";
             }else if(filter_var($_POST['inputAltura'], FILTER_VALIDATE_INT)){
                 //echo "Preencha o campo Peso no formato 0.00";
-                $_SESSION['error'] = "Preencha o campo Peso no formato 0.00";
+                $_SESSION['errorCP'] = "Preencha o campo Peso no formato 0.00";
             }else{
 
                 $nomeP = $_POST['inputNomeP'];
@@ -94,8 +94,9 @@
             <div class="formulario">
                 <form action="" method="POST">
                 <?php 
-                if(isset($_SESSION['error'])){?>
-                    <p class="p" style= "margin: 0; color: red;"><?= $_SESSION['error'];?></p><?php
+                if(isset($_SESSION['errorCP'])){?>
+                    <p class="p" style= "margin: 0; color: red;"><?= $_SESSION['errorCP'];?></p><?php
+                    unset($_SESSION['errorCP']);
                 }else{ 
                     echo "";
                     }?>
