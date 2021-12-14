@@ -10,7 +10,7 @@ body{
 .btn-primary{ /*style do botão sair*/
     background-color: #000000;
     border-color: #000000;
-    border-width: 5px;
+    border-width: 2px;
     color: #ffffff;
     border-radius: 10px;
     font-size: 90%;
