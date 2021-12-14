@@ -29,7 +29,7 @@
                 $_SESSION['error'] = "Preencha sua senha";
             }else if(strlen($_POST['inputConfSenha']) == 0){
                 //echo "Confirme sua senha";
-                $_SESSION['error'] = "Preencha sua senha";
+                $_SESSION['error'] = "Preencha a confirmação da sua senha";
             }else if($_POST['inputSenha'] != $_POST['inputConfSenha']){
                 //echo "Senhas diferentes!";
                 $_SESSION['error'] = "Senhas diferentes!";

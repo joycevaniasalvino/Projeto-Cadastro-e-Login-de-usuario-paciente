@@ -92,7 +92,6 @@
                 <?php 
                 if(isset($_SESSION['error'])){?>
                     <p style= "margin: 0; color: red;"><?= $_SESSION['error'];?></p><?php
-                    unset($_SESSION['error']);
                 }else{ 
                     echo "";
                     }?>
