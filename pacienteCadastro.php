@@ -101,19 +101,23 @@
                     }?>
                     <div class="form-group">
                         <label for="inputNomeP">Nome:</label>
-                        <input type="text" class="form-control" name="inputNomeP" aria-describedby="emailHelp" placeholder="Insira nome do paciente">
+                        <input type="text" class="form-control" name="inputNomeP" aria-describedby="emailHelp" placeholder="Insira nome do paciente" value="<?php if(isset($_POST['inputNomeP']))
+                            echo $_POST['inputNomeP'];?>">
                     </div>
                     <div class="form-group">
                         <label for="inputIdade">Idade:</label>
-                        <input type="number" class="form-control" name="inputIdade" placeholder="Insira idade do paciente">
+                        <input type="number" class="form-control" name="inputIdade" placeholder="Insira idade do paciente" value="<?php if(isset($_POST['inputIdade']))
+                            echo $_POST['inputIdade'];?>">
                     </div>
                     <div class="form-group">
                         <label for="inputPeso">Peso:</label>
-                        <input type="number" class="form-control" name="inputPeso" placeholder="Insira peso do paciente" step="0.01">
+                        <input type="number" class="form-control" name="inputPeso" placeholder="Insira peso do paciente" step="0.01" value="<?php if(isset($_POST['inputPeso']))
+                            echo $_POST['inputPeso'];?>">
                     </div>
                     <div class="form-group">
                         <label for="inputAltura">Altura:</label>
-                        <input type="number" class="form-control" name="inputAltura" placeholder="Insira altura do paciente" step="0.01">
+                        <input type="number" class="form-control" name="inputAltura" placeholder="Insira altura do paciente" step="0.01" value="<?php if(isset($_POST['inputAltura']))
+                            echo $_POST['inputAltura'];?>">
                     </div>
                     <div class="button">
                         <button type="submit" class="btn btn-primary">Cadastrar</button> 

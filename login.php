@@ -80,7 +80,8 @@
                 <form id="login" action="" method="POST">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="email" name ="inputEmail" aria-describedby="emailHelp" placeholder="Insira seu email">
+                        <input type="email" class="form-control" id="email" name ="inputEmail" aria-describedby="emailHelp" placeholder="Insira seu email" value="<?php if(isset($_POST['inputEmail']))
+                            echo $_POST['inputEmail'];?>">
                     </div>
                     <div class="form-group">
                         <label for="inputSenha">Senha</label>

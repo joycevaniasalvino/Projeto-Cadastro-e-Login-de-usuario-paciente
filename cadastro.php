@@ -111,11 +111,13 @@
                         }?>
                     <div class="form-group">
                         <label for="inputNome">Nome:</label>
-                        <input type="text" class="form-control" name="inputNome" aria-describedby="emailHelp" placeholder="Insira seu nome completo">
+                        <input type="text" class="form-control" name="inputNome" aria-describedby="emailHelp" placeholder="Insira seu nome completo" value="<?php if(isset($_POST['inputNome']))
+                            echo $_POST['inputNome'];?>">
                     </div>
                     <div class="form-group">
                         <label for="inputEmail">Email:</label>
-                        <input type="email" class="form-control" name="inputEmail" placeholder="Insira sua email">
+                        <input type="email" class="form-control" name="inputEmail" placeholder="Insira sua email" value="<?php if(isset($_POST['inputEmail']))
+                            echo $_POST['inputEmail'];?>">
                     </div>
                     <div class="form-group">
                         <label for="inputSenha">Senha:</label>
